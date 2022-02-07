@@ -1,0 +1,77 @@
+.navbar {
+  position: fixed;
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+  height: 70px;
+  z-index: 1;
+  transition: all 0.5s ease-in;
+}
+.navbar-black {
+  background-color: #111;
+}
+.nav-logo {
+  display: grid;
+  place-items: center;
+}
+.logo {
+  margin: 10px 10px 10px 20px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.links-container {
+  display: flex;
+  align-items: center;
+}
+.links {
+  display: flex;
+}
+.link {
+  font-size: 18px;
+  margin: 10px;
+  color: white;
+  text-decoration: none;
+  transition: 1s linear;
+}
+.link:hover {
+  color: rgb(122, 122, 122);
+}
+
+.right-side {
+  display: flex;
+}
+.right-side div {
+  margin: 0 10px;
+}
+.search {
+  display: grid;
+  place-items: center;
+  color: white;
+  cursor: pointer;
+}
+
+.notification {
+  display: grid;
+  place-items: center;
+  color: white;
+  cursor: pointer;
+}
+
+.nav-avatar-container {
+  display: grid;
+  place-items: center;
+}
+.nav-avatar {
+  display: flex;
+}
+.avatar {
+  height: 40px;
+  margin: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.dropdown {
+  margin: 0;
+  color: white;
+  cursor: pointer;
+}

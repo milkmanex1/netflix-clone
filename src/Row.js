@@ -3,6 +3,7 @@ import { useState } from "react";
 import axios from "./axios";
 import "./Row.css";
 import Youtube from "react-youtube";
+import movieTrailer from "movie-trailer";
 
 const base_url = "https://image.tmdb.org/t/p/original/";
 
@@ -23,7 +24,7 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
       //close the video
       setTrailerUrl("");
     } else {
-      //movieTrailer is a library function. U pass in movie name
+      //movieTrailer is a library function. You pass in movie name
       movieTrailer(movie.name || "")
         .then((url) => {
           const urlParams = new URLSearchParams(new URL(url).search);
