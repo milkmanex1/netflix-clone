@@ -1,0 +1,76 @@
+.login {
+  font-family: "Montserrat", sans-serif;
+  height: 100vh;
+  width: 100vw;
+  background-color: #111;
+  color: white;
+  font-weight: bold;
+}
+.logo-container {
+  padding: 20px;
+}
+
+.section-center {
+  margin-top: 2.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.section-center h1 {
+  margin-bottom: 15px;
+  font-size: 2.2rem;
+}
+
+.profile-container {
+  display: flex;
+  column-gap: 25px;
+  margin-top: 20px;
+}
+.profile {
+  cursor: pointer;
+}
+.profile:hover > .avatar {
+  border: 3px solid white;
+}
+.profile:hover > .name {
+  color: white;
+}
+.avatar {
+  margin: 0;
+  padding: 0;
+  /* height: 150px;
+  width: 150px; */
+  height: 10rem;
+  width: 10rem;
+  object-fit: cover;
+  /* margin: 15px; */
+  margin-bottom: 5px;
+  border: 3px solid #111;
+  border-radius: 5px;
+}
+/* .avatar:hover {
+  border: 3px solid white;
+} */
+.name {
+  font-size: 1rem;
+  color: rgb(150, 150, 150);
+  text-align: center;
+}
+
+.bottom {
+  margin-top: 3rem;
+  color: rgb(150, 150, 150);
+  text-align: center;
+  border: 1px solid rgb(150, 150, 150);
+
+  border-radius: 0.5px;
+  padding: 8px 30px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.bottom:hover {
+  color: white;
+  border: 1px solid white;
+}

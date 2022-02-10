@@ -3,7 +3,8 @@ import "./Navbar.css";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import SearchIcon from "@material-ui/icons/Search";
 import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
-const Navbar = () => {
+
+const Navbar = ({ avatar }) => {
   const [show, setShow] = useState(false);
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -12,7 +13,7 @@ const Navbar = () => {
       } else setShow(false);
     });
     return () => {
-      window.removeEventListener("scroll");
+      window.removeEventListener("scroll", null);
     };
   }, []);
   return (
@@ -20,7 +21,7 @@ const Navbar = () => {
       <div className="nav-logo">
         <img
           className="logo"
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1198px-Netflix_2015_logo.svg.png"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/2560px-Netflix_2015_logo.svg.png"
           alt="netflix logo"
         />
       </div>
@@ -57,8 +58,11 @@ const Navbar = () => {
         <div className="nav-avatar-container">
           <div className="nav-avatar">
             <img
-              className="avatar"
-              src="https://ih1.redbubble.net/image.618427277.3222/flat,800x800,075,f.u2.jpg"
+              className="img"
+              src={
+                avatar ||
+                "https://i.pinimg.com/originals/e3/94/30/e39430434d2b8207188f880ac66c6411.png"
+              }
               alt="netflix smiley icon"
             />
             <div className="dropdown">

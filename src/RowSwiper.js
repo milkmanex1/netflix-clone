@@ -1,11 +1,14 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import axios from "./axios";
-import "./Row.css";
+import "./RowSwiper.css";
 import Youtube from "react-youtube";
 import movieTrailer from "movie-trailer";
 
 import { Swiper, SwiperSlide } from "swiper/react";
+import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from "swiper";
+
+//**This is identical to Row.js, but uses swiper js
 
 const base_url = "https://image.tmdb.org/t/p/original/";
 
@@ -52,21 +55,23 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
   return (
     <div className="row">
       <h2>{title}</h2>
-      <div className="row-imgs">
+      <Swiper spaceBetween={20} slidesPerView={5} navigation={true}>
         {movies.map((movie) => (
-          <img
-            key={movie.id}
-            onClick={() => {
-              clickPlay(movie);
-            }}
-            className={`row-img ${isLargeRow && "row-img-large"}`}
-            src={`${base_url}${
-              isLargeRow ? movie.poster_path : movie.backdrop_path
-            }`}
-            alt={movie.title}
-          />
+          <SwiperSlide>
+            <img
+              key={movie.id}
+              onClick={() => {
+                clickPlay(movie);
+              }}
+              className={`row-img ${isLargeRow && "row-img-large"}`}
+              src={`${base_url}${
+                isLargeRow ? movie.poster_path : movie.backdrop_path
+              }`}
+              alt={movie.title}
+            />
+          </SwiperSlide>
         ))}
-      </div>
+      </Swiper>
       {trailerUrl && <Youtube videoId={trailerUrl} opts={opts}></Youtube>}
     </div>
   );
