@@ -1,28 +1,28 @@
 import "./App.css";
-import Row from "./Row";
-import requests from "./requests";
-import Banner from "./Banner";
-import Navbar from "./Navbar";
+import Home from "./Home";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Login from "./Login";
+import { useState } from "react";
 
 function App() {
+  const [avatar, setAvatar] = useState("");
   return (
     <div className="App">
-      <Navbar></Navbar>
-      <Banner></Banner>
-      <Row
-        title="NETFLIX ORIGINALS"
-        fetchUrl={requests.fetchNetflixOriginals}
-        isLargeRow={true}
-      ></Row>
-      <Row title="Trending Now" fetchUrl={requests.fetchTrending}></Row>
-      <Row title="Top Rated" fetchUrl={requests.fetchTopRated}></Row>
-      <Row title="Action Movies" fetchUrl={requests.fetchActionMovies}></Row>
-      <Row title="Comedy Movies" fetchUrl={requests.fetchComedyMovies}></Row>
-      <Row title="Horror Movies" fetchUrl={requests.fetchHorrorMovies}></Row>
-      <Row title="Romance Movies" fetchUrl={requests.fetchRomanceMovies}></Row>
-      <Row title="Documentaries" fetchUrl={requests.fetchDocumentaries}></Row>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Login setAvatar={setAvatar}></Login>} />
+          <Route path="/home" element={<Home avatar={avatar}></Home>} />
+        </Routes>
+      </Router>
     </div>
   );
 }
 
 export default App;
+
+//!* What I learnt in this app:
+//* Lots of css practice
+//*use rem instead of px for better scaling
+//* Can download Swiper JS for carousell
+
+//*using axios instead of fetch
