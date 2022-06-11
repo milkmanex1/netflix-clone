@@ -8,18 +8,13 @@ import { Link } from "react-router-dom";
 const Login = () => {
   const navigate = useNavigate();
 
-  const [{ loggedUser }, dispatch] = useStateValue();
+  const { loggedUser, setLoggedUser } = useStateValue();
   const userLogin = (userImg, userId) => {
     // setUser({ avatar: userImg, id: userId });
 
     //*dispatch item into data layer
-    dispatch({
-      type: "set user",
-      loggedUser: {
-        avatar: userImg,
-        id: userId,
-      },
-    });
+    setLoggedUser({ avatar: userImg, id: userId });
+
     navigate("/home");
   };
   return (
