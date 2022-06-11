@@ -4,6 +4,8 @@
 //This is also known as Context Provider.
 //It will wrap the app in the index.js, giving everything inside access to the data
 
+//test
+
 //* The provider is used to give other components access to the context
 
 import { createContext, useContext, useReducer, useEffect } from "react";
