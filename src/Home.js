@@ -1,13 +1,16 @@
 import React from "react";
 import Row from "./Row";
+// import Row from "./RowSwiper";
 import requests from "./requests";
 import Banner from "./Banner";
 import Navbar from "./Navbar";
+import Popup from "./Popup";
 
-const Home = ({ avatar }) => {
+const Home = () => {
   return (
     <div>
-      <Navbar avatar={avatar}></Navbar>
+      <Navbar></Navbar>
+      <Popup></Popup>
       <Banner></Banner>
       <Row
         title="NETFLIX ORIGINALS"

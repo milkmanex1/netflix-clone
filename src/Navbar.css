@@ -5,7 +5,7 @@
   grid-template-columns: 1fr 4fr 1fr;
   height: 70px;
   z-index: 1;
-  transition: all 0.5s ease-in;
+  transition: all 0.3s ease-in;
 }
 .navbar-black {
   background-color: #111;

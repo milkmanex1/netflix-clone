@@ -1,14 +1,22 @@
+//**This is identical to Row.js, but uses swiper js
+
 import React, { useEffect } from "react";
 import { useState } from "react";
 import axios from "./axios";
-import "./RowSwiper.css";
+import s from "./RowSwiper.module.css";
+
+import "swiper/css";
+// You need this css file for swiper to work
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
+
 import Youtube from "react-youtube";
 import movieTrailer from "movie-trailer";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from "swiper";
-
-//**This is identical to Row.js, but uses swiper js
+import { ModeComment } from "@material-ui/icons";
 
 const base_url = "https://image.tmdb.org/t/p/original/";
 
@@ -53,23 +61,31 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
   }, [fetchUrl]);
 
   return (
-    <div className="row">
+    <div className={s.row}>
       <h2>{title}</h2>
-      <Swiper spaceBetween={20} slidesPerView={5} navigation={true}>
+      <Swiper
+        modules={[Navigation, Pagination, Scrollbar, A11y]}
+        spaceBetween={50}
+        slidesPerView={6}
+        navigation={true}
+        onSlideChange={() => console.log("slide change")}
+      >
         {movies.map((movie) => (
-          <SwiperSlide>
-            <img
-              key={movie.id}
-              onClick={() => {
-                clickPlay(movie);
-              }}
-              className={`row-img ${isLargeRow && "row-img-large"}`}
-              src={`${base_url}${
-                isLargeRow ? movie.poster_path : movie.backdrop_path
-              }`}
-              alt={movie.title}
-            />
-          </SwiperSlide>
+          <div className={s.rowImgs}>
+            <SwiperSlide>
+              <img
+                key={movie.id}
+                className={s.rowImg}
+                onClick={() => {
+                  clickPlay(movie);
+                }}
+                src={`${base_url}${
+                  isLargeRow ? movie.poster_path : movie.backdrop_path
+                }`}
+                alt={movie.title}
+              />
+            </SwiperSlide>
+          </div>
         ))}
       </Swiper>
       {trailerUrl && <Youtube videoId={trailerUrl} opts={opts}></Youtube>}
@@ -80,3 +96,8 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
 export default Row;
 //careful of spaces when using template strings
 //spent 1.5hr looking for error caused by random space in the src
+
+//got the swiper navigator arrows to work
+//still need to find out how to navigate multiple slides at once
+
+//css abit messed up , looks uglier

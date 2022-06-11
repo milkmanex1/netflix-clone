@@ -5,13 +5,12 @@ import Login from "./Login";
 import { useState } from "react";
 
 function App() {
-  const [avatar, setAvatar] = useState("");
   return (
     <div className="App">
       <Router>
         <Routes>
-          <Route path="/" element={<Login setAvatar={setAvatar}></Login>} />
-          <Route path="/home" element={<Home avatar={avatar}></Home>} />
+          <Route path="/" element={<Login></Login>} />
+          <Route path="/home" element={<Home></Home>} />
         </Routes>
       </Router>
     </div>

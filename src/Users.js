@@ -21,7 +21,7 @@ const users = [
   },
   {
     id: 5,
-    name: "New User",
+    name: "Guest",
     img: "https://ih1.redbubble.net/image.618427277.3222/flat,800x800,075,f.u2.jpg",
   },
 ];

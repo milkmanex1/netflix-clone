@@ -3,8 +3,11 @@ import "./Navbar.css";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import SearchIcon from "@material-ui/icons/Search";
 import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
+import { useStateValue } from "./StateProvider";
 
-const Navbar = ({ avatar }) => {
+const Navbar = () => {
+  const [{ loggedUser }, dispatch] = useStateValue();
+
   const [show, setShow] = useState(false);
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -60,7 +63,7 @@ const Navbar = ({ avatar }) => {
             <img
               className="img"
               src={
-                avatar ||
+                loggedUser.avatar ||
                 "https://i.pinimg.com/originals/e3/94/30/e39430434d2b8207188f880ac66c6411.png"
               }
               alt="netflix smiley icon"

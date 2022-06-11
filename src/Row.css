@@ -17,6 +17,7 @@ h2 {
 }
 .row-imgs::-webkit-scrollbar {
   /* tell all browsers to display none, but keep the functionality */
+  /* this is to hide the ugly scroll bars */
   display: none;
 }
 

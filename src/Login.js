@@ -2,12 +2,24 @@ import React from "react";
 import "./Login.css";
 import users from "./Users";
 import { useNavigate } from "react-router-dom";
+import { useStateValue } from "./StateProvider";
 import { Link } from "react-router-dom";
 
-const Login = ({ setAvatar }) => {
+const Login = () => {
   const navigate = useNavigate();
-  const userLogin = (userImg) => {
-    setAvatar(userImg);
+
+  const [{ loggedUser }, dispatch] = useStateValue();
+  const userLogin = (userImg, userId) => {
+    // setUser({ avatar: userImg, id: userId });
+
+    //*dispatch item into data layer
+    dispatch({
+      type: "set user",
+      loggedUser: {
+        avatar: userImg,
+        id: userId,
+      },
+    });
     navigate("/home");
   };
   return (
@@ -28,7 +40,7 @@ const Login = ({ setAvatar }) => {
               <div
                 key={user.id}
                 className="profile"
-                onClick={() => userLogin(user.img)}
+                onClick={() => userLogin(user.img, user.id)}
               >
                 <img className="avatar" src={user.img} alt="user img" />
                 <div className="name">{user.name}</div>

@@ -15,13 +15,13 @@ const Banner = () => {
   async function fetchData() {
     const request = await axios.get(requests.fetchNetflixOriginals);
 
-    console.log(`The length of the results is ${request.data.results.length}`);
+    // console.log(`The length of the results is ${request.data.results.length}`);
     setMovie(request.data.results[randomInt]);
     return request;
   }
-  console.log(`The number chosen is ${randomInt}`);
-  console.log(movie);
-  console.log(movie.backdrop_path);
+  //   console.log(`The number chosen is ${randomInt}`);
+  //   console.log(movie);
+  //   console.log(movie.backdrop_path);
 
   function truncate(str, n) {
     return str.length > n ? str.substr(0, n - 1) + "..." : str;

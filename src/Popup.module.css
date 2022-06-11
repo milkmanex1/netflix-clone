@@ -1,0 +1,36 @@
+.box {
+  position: fixed;
+  top: 75px;
+  right: 40px;
+  width: 10rem;
+  height: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 1px solid white;
+  z-index: 9;
+}
+
+.profiles {
+  padding: 15px 15px;
+  font-size: 1rem;
+  color: white;
+}
+.profile {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  column-gap: 10px;
+  margin-bottom: 0.8rem;
+}
+
+.avatar {
+  height: 2rem;
+  width: 2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  object-fit: cover;
+}
+.name {
+  cursor: pointer;
+}
+.name:hover {
+  text-decoration: underline;
+}
