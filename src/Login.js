@@ -2,19 +2,18 @@ import React from "react";
 import "./Login.css";
 import users from "./Users";
 import { useNavigate } from "react-router-dom";
-import { useStateValue } from "./StateProvider";
 import { Link } from "react-router-dom";
+
+import UserContext from "./UserContext";
+import { useContext } from "react";
 
 const Login = () => {
   const navigate = useNavigate();
 
-  const { loggedUser, setLoggedUser } = useStateValue();
+  const { user, setUser } = useContext(UserContext);
+
   const userLogin = (userImg, userId) => {
-    // setUser({ avatar: userImg, id: userId });
-
-    //*dispatch item into data layer
-    setLoggedUser({ avatar: userImg, id: userId });
-
+    setUser({ avatar: userImg, id: userId });
     navigate("/home");
   };
   return (

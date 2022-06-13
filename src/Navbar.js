@@ -3,12 +3,15 @@ import "./Navbar.css";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import SearchIcon from "@material-ui/icons/Search";
 import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
-import { useStateValue } from "./StateProvider";
+
+import UserContext from "./UserContext";
+import { useContext } from "react";
 
 const Navbar = () => {
-  const [{ loggedUser }, dispatch] = useStateValue();
+  const { user, dropdown, setDropdown } = useContext(UserContext);
 
   const [show, setShow] = useState(false);
+
   useEffect(() => {
     window.addEventListener("scroll", () => {
       if (window.scrollY > 100) {
@@ -63,12 +66,20 @@ const Navbar = () => {
             <img
               className="img"
               src={
-                loggedUser.avatar ||
+                user.avatar ||
                 "https://i.pinimg.com/originals/e3/94/30/e39430434d2b8207188f880ac66c6411.png"
               }
               alt="netflix smiley icon"
             />
-            <div className="dropdown">
+            <div
+              className="dropdown"
+              onMouseOver={() => {
+                setDropdown(true);
+              }}
+              //   onMouseOut={() => {
+              //     setDropdown(false);
+              //   }}
+            >
               <ArrowDropDownIcon></ArrowDropDownIcon>
             </div>
           </div>
