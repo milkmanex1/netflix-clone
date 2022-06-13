@@ -2,14 +2,13 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
-//StateProvider is the context API
-import { StateProvider } from "./StateProvider";
+import { UserProvider } from "./UserContext.js";
 
 ReactDOM.render(
   <React.StrictMode>
-    <StateProvider>
+    <UserProvider>
       <App />
-    </StateProvider>
+    </UserProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );
