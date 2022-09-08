@@ -67,13 +67,14 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
     <div className={s.row}>
       <h2>{title}</h2>
       <Swiper
+        style={{ paddingTop: 10 }}
         modules={[Navigation, Pagination, Scrollbar, A11y]}
         spaceBetween={20}
         slidesPerView={6}
         navigation={true}
         onSlideChange={() => console.log("slide change")}
         slidesPerGroup={5}
-        style={{ width: "100%", height: "100%" }}
+        // style={{ width: "100%", height: "100%" }}
         speed={1000}
       >
         {movies.map((movie) => (

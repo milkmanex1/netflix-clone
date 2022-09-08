@@ -7,13 +7,13 @@ h2 {
 }
 .row h2 {
   margin-left: 20px;
-  margin-bottom: 10px;
-  margin-top: 10px;
+  margin-bottom: 5px;
+  margin-top: 20px;
 }
 
 .rowImgs {
   display: flex;
-  overflow-y: hidden;
+  /* overflow-y: hidden; */
   overflow-x: scroll;
   padding: 20px;
 }
@@ -44,4 +44,8 @@ h2 {
 /* doesnt work */
 .swiper {
   max-height: 220px;
+  padding-top: 10px;
+}
+.swiper-initialized .swiper-horizontal .swiper-pointer-events {
+  padding-top: 10px;
 }
