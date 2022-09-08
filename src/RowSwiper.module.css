@@ -7,6 +7,8 @@ h2 {
 }
 .row h2 {
   margin-left: 20px;
+  margin-bottom: 10px;
+  margin-top: 10px;
 }
 
 .rowImgs {
@@ -37,4 +39,9 @@ h2 {
 }
 .rowImgLarge:hover {
   transform: scale(1.09);
+}
+/*!------------ swiper stuff *----------*/
+/* doesnt work */
+.swiper {
+  max-height: 220px;
 }

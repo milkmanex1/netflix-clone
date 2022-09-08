@@ -16,6 +16,9 @@ import movieTrailer from "movie-trailer";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from "swiper";
+// import Swiper styles
+import "swiper/css";
+
 import { ModeComment } from "@material-ui/icons";
 
 const base_url = "https://image.tmdb.org/t/p/original/";
@@ -65,17 +68,20 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
       <h2>{title}</h2>
       <Swiper
         modules={[Navigation, Pagination, Scrollbar, A11y]}
-        spaceBetween={50}
+        spaceBetween={20}
         slidesPerView={6}
         navigation={true}
         onSlideChange={() => console.log("slide change")}
+        slidesPerGroup={5}
+        style={{ width: "100%", height: "100%" }}
+        speed={1000}
       >
         {movies.map((movie) => (
           <div className={s.rowImgs}>
             <SwiperSlide>
               <img
                 key={movie.id}
-                className={s.rowImg}
+                className={`row-img ${isLargeRow && "row-img-large"}`}
                 onClick={() => {
                   clickPlay(movie);
                 }}

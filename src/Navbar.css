@@ -4,7 +4,7 @@
   display: grid;
   grid-template-columns: 1fr 4fr 1fr;
   height: 70px;
-  z-index: 1;
+  z-index: 100;
   transition: all 0.3s ease-in;
 }
 .navbar-black {

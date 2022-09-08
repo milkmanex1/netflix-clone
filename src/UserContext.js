@@ -5,11 +5,12 @@ const UserContext = createContext();
 export function UserProvider({ children }) {
   const localData = JSON.parse(localStorage.getItem("user"));
   const [user, setUser] = useState(localData);
-
-  const [dropdown, setDropdown] = useState(false);
+const [dropdown, setDropdown] = useState(false);
 
   useEffect(() => {
+    console.log("UseEffect triggered");
     localStorage.setItem("user", JSON.stringify(user));
+    console.log(user);
   }, [user]);
 
   return (

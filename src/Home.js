@@ -1,6 +1,6 @@
 import React from "react";
 import Row from "./Row";
-// import Row from "./RowSwiper";
+import RowSwiper from "./RowSwiper";
 import requests from "./requests";
 import Banner from "./Banner";
 import Navbar from "./Navbar";
@@ -12,18 +12,39 @@ const Home = () => {
       <Navbar></Navbar>
       <Popup></Popup>
       <Banner></Banner>
-      <Row
+      <RowSwiper
         title="NETFLIX ORIGINALS"
         fetchUrl={requests.fetchNetflixOriginals}
         isLargeRow={true}
-      ></Row>
-      <Row title="Trending Now" fetchUrl={requests.fetchTrending}></Row>
-      <Row title="Top Rated" fetchUrl={requests.fetchTopRated}></Row>
-      <Row title="Action Movies" fetchUrl={requests.fetchActionMovies}></Row>
-      <Row title="Comedy Movies" fetchUrl={requests.fetchComedyMovies}></Row>
-      <Row title="Horror Movies" fetchUrl={requests.fetchHorrorMovies}></Row>
-      <Row title="Romance Movies" fetchUrl={requests.fetchRomanceMovies}></Row>
-      <Row title="Documentaries" fetchUrl={requests.fetchDocumentaries}></Row>
+      ></RowSwiper>
+      <RowSwiper
+        title="Trending Now"
+        fetchUrl={requests.fetchTrending}
+      ></RowSwiper>
+      <RowSwiper
+        title="Top Rated"
+        fetchUrl={requests.fetchTopRated}
+      ></RowSwiper>
+      <RowSwiper
+        title="Action Movies"
+        fetchUrl={requests.fetchActionMovies}
+      ></RowSwiper>
+      <RowSwiper
+        title="Comedy Movies"
+        fetchUrl={requests.fetchComedyMovies}
+      ></RowSwiper>
+      <RowSwiper
+        title="Horror Movies"
+        fetchUrl={requests.fetchHorrorMovies}
+      ></RowSwiper>
+      <RowSwiper
+        title="Romance Movies"
+        fetchUrl={requests.fetchRomanceMovies}
+      ></RowSwiper>
+      <RowSwiper
+        title="Documentaries"
+        fetchUrl={requests.fetchDocumentaries}
+      ></RowSwiper>
     </div>
   );
 };
