@@ -23,7 +23,7 @@ import { ModeComment } from "@material-ui/icons";
 
 const base_url = "https://image.tmdb.org/t/p/original/";
 
-const Row = ({ title, fetchUrl, isLargeRow }) => {
+const Row = ({ title, fetchUrl, isLargeRow, slidesPerRow }) => {
   const [movies, setMovies] = useState([]);
   const [trailerUrl, setTrailerUrl] = useState("");
 
@@ -67,13 +67,14 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
     <div className={s.row}>
       <h2>{title}</h2>
       <Swiper
-        style={{ paddingTop: 10 }}
+        style={{ paddingTop: 10, paddingBottom: 5 }}
         modules={[Navigation, Pagination, Scrollbar, A11y]}
         spaceBetween={20}
-        slidesPerView={6}
+        slidesPerView={slidesPerRow}
         navigation={true}
         onSlideChange={() => console.log("slide change")}
         slidesPerGroup={5}
+        scrollable={true}
         // style={{ width: "100%", height: "100%" }}
         speed={1000}
       >
