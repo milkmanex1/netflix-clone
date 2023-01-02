@@ -4,7 +4,7 @@ Demo here: https://netflix-clone-e9281.web.app/
 I built a small segment of everyone's favourite video streaming site, with some features.
 
 
-Netflix Clone is built entirely from scratch with the following technologies:
+Netflix Clone is built from scratch with the following technologies:
 
 - React
 - Css Modules
